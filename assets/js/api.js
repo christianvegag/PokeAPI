@@ -31,21 +31,7 @@ const fillData = (data) => {
 };
 
 const fillDataImg = (dataImg, img) => {
-
-
-  // html += '<div class="col">';
-  // html += '<div class="card h-100 bg-info bg-opacity-10">';
-  // html += `<img src="${img.front_default}" class="card-img-top" style="height:250px;" alt="...">`;
-  // html += '<div class="card-body text-center">';
-  // html += `<h3 class="card-title text-uppercase">${dataImg.name}</h3>`;
-  // html += `<h5 class="card-text">Altura -> ${dataImg.height}</h5>`;
-  // html += `<h5 class="card-text">Peso -> ${dataImg.weight}</h5>`;
-  // html += "</div>";
-  // html += "</div>";
-  // html += "</div>";
-
-  html += `
-  <div class="wrapper">
+  html += `<div class="wrapper">
         <div class="clash-card barbarian">
           <div class="clash-card__image clash-card__image--barbarian">
             <img src="${img.front_default}"  style="height:280px;" alt="..." alt="barbarian" />
@@ -75,17 +61,24 @@ const fillDataImg = (dataImg, img) => {
           </div>
     
         </div> <!-- end clash-card barbarian-->
-      </div> <!-- end wrapper -->`
+      </div> <!-- end wrapper -->`;
 
   document.getElementById("characters").innerHTML = html;
 };
 
-
 const pagination = (info) => {
   let html = "";
 
-  html += `<li style="cursor:pointer;" class="page-item ${info.previous == null ? "disabled" : ""}"><a class="page-link bg-transparent" onclick="getAPI('${info.previous}')">Prev</a></li>`;
-  html += `<li style="cursor:pointer;" class="page-item ${info.next == null ? "disabled" : ""}"><a class="page-link bg-transparent" onclick="getAPI('${info.next}')">Next</a></li>`;
+  html += `<li style="cursor:pointer;" class="page-item ${
+    info.previous == null ? "disabled" : ""
+  }"><a class="page-link bg-transparent" onclick="getAPI('${
+    info.previous
+  }')">Prev</a></li>`;
+  html += `<li style="cursor:pointer;" class="page-item ${
+    info.next == null ? "disabled" : ""
+  }"><a class="page-link bg-transparent" onclick="getAPI('${
+    info.next
+  }')">Next</a></li>`;
 
   document.getElementById("pagination").innerHTML = html;
 };
